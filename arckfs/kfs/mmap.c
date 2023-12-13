@@ -29,7 +29,7 @@ int sufs_kfs_mmap(struct file *filp, struct vm_area_struct *vma)
 
     /*  Makes vmf_insert_pfn_prot happy */
     /*  TODO: validate whether VM_PFNMAP has any side effect or not */
-    vma->vm_flags |= VM_PFNMAP;
+    vm_flags_set(vma, VM_PFNMAP);
 
     return 0;
 }

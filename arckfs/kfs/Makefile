@@ -1,4 +1,4 @@
-KDIR ?= ../../linux/
+KDIR ?= ${HOME}/linux
 
 obj-m += sufs.o
 
@@ -10,7 +10,7 @@ ccflags-y := -std=gnu99 -Wno-declaration-after-statement -O3 -mtune=native
 
 .PHONY: all
 all:
-	make -C $(KDIR) M=`pwd`
+	make LLVM=-14 -C $(KDIR) M=`pwd`
 
 .PHONY: clean
 clean:

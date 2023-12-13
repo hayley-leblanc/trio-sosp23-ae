@@ -64,7 +64,6 @@ out:
 
 int sufs_kfs_sr_receive_request(struct sufs_ring_buffer *ring, void *to)
 {
-    unsigned long irq = 0;
     int ret = 0;
 
     /* Spin to wait for a new entry */

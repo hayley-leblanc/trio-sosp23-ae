@@ -124,7 +124,7 @@ int sufs_kfs_create_ring(struct sufs_tgroup * tgroup)
 
     /*  Makes vmf_insert_pfn_prot happy */
     /*  TODO: validate whether VM_PFNMAP has any side effect or not */
-    vma->vm_flags |= VM_PFNMAP;
+    vm_flags_set(vma, VM_PFNMAP);
 
     ret = sufs_kfs_mmap_ring(SUFS_LEASE_RING_ADDR,
             SUFS_LEASE_RING_SIZE, vma, 1,

@@ -64,7 +64,7 @@ static unsigned long user_virt_addr_to_phy_addr(struct mm_struct *mm,
     if (pud_large(*pud))
     {
         phys_page_addr = (phys_addr_t)pud_pfn(*pud) << PAGE_SHIFT;
-        offset = uaddr & ~PUD_PAGE_MASK;
+        offset = uaddr & ~PUD_MASK;
 
        /*
         * This part has not been fully debugged and might be the issue,
@@ -86,7 +86,7 @@ static unsigned long user_virt_addr_to_phy_addr(struct mm_struct *mm,
     if (pmd_large(pmde))
     {
         phys_page_addr = (phys_addr_t)pmd_pfn(pmde) << PAGE_SHIFT;
-        offset = uaddr & ~PMD_PAGE_MASK;
+        offset = uaddr & ~PMD_MASK;
 
        /*
         * This part has not been fully debugged and might be the issue,

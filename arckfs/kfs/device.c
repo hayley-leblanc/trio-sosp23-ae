@@ -158,9 +158,6 @@ static int sufs_init(void)
 
     return 0;
 
-out_error:
-    device_destroy(sufs_class, sufs_dev_t);
-
 out_class:
     class_destroy(sufs_class);
 

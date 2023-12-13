@@ -19,8 +19,6 @@ void sufs_kfs_init_ring_buffers(int nodes)
     /* allocate the space for counter */
     for (i = 0; i < SUFS_MAX_THREADS; i++)
     {
-        int socket = 0;
-
         /* socket = i / sufs_sb.cpus_per_socket; */
 
         sufs_kfs_allocate_pages(SUFS_ODIN_ONE_CNT_RING_SIZE, NUMA_NO_NODE,

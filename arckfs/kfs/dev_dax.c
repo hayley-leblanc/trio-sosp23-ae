@@ -40,7 +40,7 @@ static int sufs_init_one_dev(char * path, int index)
 
     /* In our version of the dax_direct_access, it will always succeed... */
     sufs_dev_arr.size_in_bytes[index] =
-            dax_direct_access(dax_dev, 0, LONG_MAX / PAGE_SIZE,
+            dax_direct_access(dax_dev, 0, LONG_MAX / PAGE_SIZE, DAX_ACCESS,
                     (void **) &(sufs_dev_arr.start_virt_addr[index]), NULL);
 
     sufs_dev_arr.size_in_bytes[index] *= PAGE_SIZE;
